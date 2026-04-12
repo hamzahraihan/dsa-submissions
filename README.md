@@ -1,10 +1,10 @@
-# Data structure and Algorithm
+# Data Structure and Algorithm
 
 ---
 
 ## What is this?
 
-This repository is a documentation for all Data structure and Algorithm problem that i solved and submiited.
+This repository is a documentation for all data structure and algorithm problem that i solved and submiited.
 
 ---
 
