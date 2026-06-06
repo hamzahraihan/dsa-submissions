@@ -1,0 +1,27 @@
+class Solution {
+    private int[] memo;
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+        memo = new int[n + 1];
+        Arrays.fill(memo, -1);
+
+        int res = 1;
+        for(int i = 0; i < n; i++){
+            res = Math.max(res, dfs(nums, i));
+        }
+        return res;
+    }
+
+    private int dfs(int[] nums, int i){
+        if(memo[i] != -1) return memo[i];
+
+        int LIS = 1;
+        for(int j = i + 1; j < nums.length; j++){
+            if(nums[i] < nums[j]){
+                LIS = Math.max(LIS, 1 + dfs(nums, j));
+            }
+        }
+        memo[i] = LIS;
+        return LIS;
+    }
+}
