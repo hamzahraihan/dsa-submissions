@@ -1,0 +1,27 @@
+class Solution {
+    // private int[] memo;
+    // public int rob(int[] nums) {
+    //     memo = new int[nums.length];
+    //     Arrays.fill(memo, - 1);
+    //     return dfs(0, nums);
+    // }
+
+    // private int dfs(int i, int[] nums){
+    //     if(i >= nums.length) return 0;
+    //     if(memo[i] != -1) return memo[i];
+
+    //     memo[i] = Math.max(dfs(i + 1, nums), nums[i] + dfs(i + 2, nums)); 
+    //     return memo[i];
+    // }
+
+    public int rob(int[] nums) {
+        int dp1 = 0, dp2 = 0;
+        for(int num : nums){
+            int temp = Math.max(num + dp1, dp2);
+            dp1 = dp2;
+            dp2 = temp;
+        }
+
+        return dp2;
+    }
+}
